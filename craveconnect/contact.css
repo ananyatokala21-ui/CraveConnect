@@ -1,0 +1,194 @@
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Header / Navbar */
+header {
+  background-color: #ff7043;
+  color: white;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 40px;
+}
+
+.navbar .logo {
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.nav-links li a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.nav-links li a.active {
+  text-decoration: underline;
+}
+
+/* Banner */
+.contact-banner {
+  background: url('cafe food.webp') center/cover no-repeat;
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-shadow: 1px 1px 8px rgba(0,0,0,0.6);
+}
+
+.contact-banner h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+
+.contact-banner p {
+  font-size: 1.2rem;
+}
+
+/* Contact Section */
+.contact-section {
+  background-color: #fff3e0;
+  padding: 50px 20px;
+}
+
+.contact-container {
+  max-width: 800px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  align-items: center;
+}
+
+/* ✅ Updated Form Styling */
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 500px; /* Reduced width */
+  margin: 0 auto;    /* Centered */
+  gap: 15px;
+  background-color: white;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+}
+
+.contact-form input,
+.contact-form textarea {
+  padding: 12px;
+  border: 1px solid #ffab91;
+  border-radius: 10px;
+  font-size: 16px;
+  outline: none;
+  transition: 0.3s;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: #ff7043;
+}
+
+.contact-form button {
+  padding: 12px;
+  background-color: #ff7043;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 16px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.contact-form button:hover {
+  background-color: #ff5722;
+}
+
+/* Contact Info */
+.contact-info {
+  text-align: center;
+}
+
+.contact-info h3 {
+  font-size: 1.4rem;
+  margin-bottom: 15px;
+}
+
+.contact-info p {
+  font-size: 1rem;
+  margin-bottom: 5px;
+}
+
+.social-links a {
+  text-decoration: none;
+  color: #ff7043;
+  font-weight: bold;
+  margin: 0 5px;
+  transition: 0.3s;
+}
+
+.social-links a:hover {
+  color: #ff5722;
+}
+
+/* Popup */
+.popup {
+  display: none;
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.5);
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.popup-content {
+  background: white;
+  padding: 30px;
+  border-radius: 15px;
+  text-align: center;
+  max-width: 400px;
+  width: 80%;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+}
+
+#closePopup {
+  margin-top: 20px;
+  padding: 10px 20px;
+  border: none;
+  background-color: #ff7043;
+  color: white;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+#closePopup:hover {
+  background-color: #ff5722;
+}
+
+/* Footer */
+footer {
+  background-color: #ff7043;
+  color: white;
+  text-align: center;
+  padding: 15px 0;
+  margin-top: 40px;
+}

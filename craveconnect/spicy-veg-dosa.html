@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Spicy Veg Dosa | CraveConnect</title>
+  <link rel="stylesheet" href="recipe.css">
+</head>
+<body>
+
+  <!-- Navbar -->
+  <header>
+    <nav class="navbar">
+      <div class="logo">CraveConnect</div>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="recipes.html">Recipes</a></li>
+        <li><a href="post.html">Post</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Recipe Detail Section -->
+  <section class="recipe-detail">
+    <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=700&q=80" alt="Spicy Veg Dosa">
+    <h1>Spicy Veg Dosa</h1>
+    <p>A South Indian classic with a twist of spices.</p>
+
+    <!-- Likes -->
+    <div class="likes-section">
+      <button id="likeBtn">❤️ Like</button>
+      <span id="likeCount">0 Likes</span>
+    </div>
+
+    <!-- Comments / Reviews -->
+    <div class="comments-section">
+      <h3>Comments & Reviews</h3>
+      <input type="text" id="commentInput" placeholder="Add a comment...">
+      <button id="commentBtn">Post</button>
+      <div id="commentsList"></div>
+    </div>
+
+    <!-- Ratings -->
+    <div class="ratings-section">
+      <h3>Rate this recipe</h3>
+      <span class="star" data-value="1">⭐</span>
+      <span class="star" data-value="2">⭐</span>
+      <span class="star" data-value="3">⭐</span>
+      <span class="star" data-value="4">⭐</span>
+      <span class="star" data-value="5">⭐</span>
+      <p id="ratingValue">0 / 5</p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 CraveConnect</p>
+  </footer>
+
+  <script src="recipe-detail.js"></script>
+</body>
+</html>

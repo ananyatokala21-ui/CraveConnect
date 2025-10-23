@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us | CraveConnect</title>
+  <link rel="stylesheet" href="contact.css">
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <nav class="navbar">
+      <div class="logo">CraveConnect</div>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="recipes.html">Recipes</a></li>
+        <li><a href="post.html">Post</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html" class="active">Contact</a></li>
+        <li><a href="login.html">Login</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Banner -->
+  <section class="contact-banner">
+    <h1>Let’s Connect Over Food! 🍴</h1>
+    <p>We’d love to hear from you. Send us a message below!</p>
+  </section>
+
+  <!-- Contact Form Section -->
+  <section class="contact-section">
+    <div class="contact-container">
+      <form class="contact-form" id="contactForm">
+        <input type="text" placeholder="Your Name" required>
+        <input type="email" placeholder="Your Email" required>
+        <textarea placeholder="Your Message" rows="5" required></textarea>
+        <button type="submit">Send Message</button>
+      </form>
+
+      <div class="contact-info">
+        <h3>Reach Us At 📞</h3>
+        <p><strong>Email:</strong> support@craveconnect.com</p>
+        <p><strong>Phone:</strong> +91 98765 43210</p>
+        <div class="social-links">
+          <a href="#">Instagram</a> |
+          <a href="#">Facebook</a> |
+          <a href="#">YouTube</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Popup Message -->
+  <div id="thankYouPopup" class="popup">
+    <div class="popup-content">
+      <h3>Thank You! 💛</h3>
+      <p>Your message has been received. We’ll get back to you soon!</p>
+      <button id="closePopup">Close</button>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 CraveConnect</p>
+  </footer>
+
+  <script>
+    const form = document.getElementById("contactForm");
+    const popup = document.getElementById("thankYouPopup");
+    const closeBtn = document.getElementById("closePopup");
+
+    form.addEventListener("submit", (e) => {
+      e.preventDefault();
+      popup.style.display = "flex";
+      form.reset();
+    });
+
+    closeBtn.addEventListener("click", () => {
+      popup.style.display = "none";
+    });
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Paneer Tikka | CraveConnect</title>
+  <link rel="stylesheet" href="recipe-detail.css">
+</head>
+<body>
+
+  <!-- Navbar -->
+  <header>
+    <nav class="navbar">
+      <div class="logo">CraveConnect</div>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="recipes.html">Recipes</a></li>
+        <li><a href="post.html">Post</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="login.html">Login</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Banner -->
+  <section class="recipe-banner" style="background-image: url('paneer tikka.webp');">
+    <div class="overlay"></div>
+    <div class="banner-text">
+      <h1>Paneer Tikka</h1>
+      <p>🔥 Grilled paneer cubes marinated in aromatic Indian spices.</p>
+    </div>
+  </section>
+
+  <!-- Recipe Details -->
+  <section class="recipe-content">
+    <div class="recipe-info">
+      <h2>Ingredients 🧂</h2>
+      <ul>
+        <li>200g paneer (cubed)</li>
+        <li>1/2 cup thick curd (yogurt)</li>
+        <li>1 tbsp red chili powder</li>
+        <li>1 tsp turmeric powder</li>
+        <li>1 tbsp ginger-garlic paste</li>
+        <li>1 tbsp lemon juice</li>
+        <li>1 tsp garam masala</li>
+        <li>1 tbsp oil</li>
+        <li>Salt to taste</li>
+        <li>Capsicum & onion cubes for skewering</li>
+      </ul>
+    </div>
+
+    <div class="recipe-steps">
+      <h2>Method 👩‍🍳</h2>
+      <ol>
+        <li>In a bowl, mix curd, spices, lemon juice, and oil to make a thick marinade.</li>
+        <li>Add paneer, capsicum, and onion cubes. Coat well and rest for 30 minutes.</li>
+        <li>Skewer the marinated pieces and grill or bake until golden brown.</li>
+        <li>Brush with butter for extra flavor and serve hot with mint chutney!</li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- Likes & Comments -->
+  <section class="recipe-interaction">
+    <div class="like-section">
+      <button id="likeBtn">❤️ Like</button>
+      <span id="likeCount">0 Likes</span>
+    </div>
+
+    <div class="comments-section">
+      <h2>Reviews & Comments 💬</h2>
+      <input type="text" id="commentInput" placeholder="Write your comment...">
+      <button id="commentBtn">Post</button>
+      <div id="commentList"></div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 CraveConnect</p>
+  </footer>
+
+  <!-- JS -->
+  <script>
+    const likeBtn = document.getElementById('likeBtn');
+    const likeCount = document.getElementById('likeCount');
+    let likes = 0;
+    likeBtn.addEventListener('click', () => {
+      likes++;
+      likeCount.textContent = likes + " Likes";
+    });
+
+    const commentInput = document.getElementById('commentInput');
+    const commentBtn = document.getElementById('commentBtn');
+    const commentList = document.getElementById('commentList');
+
+    commentBtn.addEventListener('click', () => {
+      const commentText = commentInput.value.trim();
+      if (commentText !== "") {
+        const div = document.createElement('div');
+        div.classList.add('comment');
+        div.textContent = commentText;
+        commentList.appendChild(div);
+        commentInput.value = "";
+      }
+    });
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Post | CraveConnect</title>
+  <link rel="stylesheet" href="post.css">
+</head>
+<body>
+
+  <!-- Navbar -->
+  <header>
+    <nav class="navbar">
+      <div class="logo">CraveConnect</div>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="recipes.html">Recipes</a></li>
+        <li><a href="post.html" class="active">Post</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="login.html">Login</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Add Post Button -->
+  <section class="add-post-section">
+    <button id="addPostBtn">+ Add Post</button>
+  </section>
+
+  <!-- Banner -->
+  <section class="post-banner">
+    <h1>Share Your Food Story 🍳</h1>
+    <p>Post your favorite dishes, home recipes, or restaurant finds!</p>
+  </section>
+
+  <!-- Featured Recipes Section -->
+  <section class="featured-recipes">
+    <h2>Featured Recipes 🌟</h2>
+    <div class="recipe-cards">
+      <div class="recipe-card">
+        <img src="spicy dosa.webp" alt="Recipe 1">
+        <h3>Spicy Veg Dosa</h3>
+        <a href="spicy-dosa.html" class="btn-small">View Recipe</a>
+      </div>
+
+      <div class="recipe-card">
+        <img src="choco lava.webp" alt="Recipe 2">
+        <h3>Chocolate Lava Cake</h3>
+        <a href="choco-lava.html" class="btn-small">View Recipe</a>
+      </div>
+
+      <div class="recipe-card">
+        <img src="paneer tikka.webp" alt="Recipe 3">
+        <h3>Paneer Tikka</h3>
+        <a href="paneer-tikka.html" class="btn-small">View Recipe</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Chef of the Week -->
+  <section class="chef-week">
+    <h2>🏆 Chef of the Week</h2>
+    <div class="chef-card-container">
+      <div class="chef-card">
+        <img src="chefplaceholder.png" alt="Chef of the Week" class="chef-img">
+        <div class="chef-info">
+          <h3>John Paul</h3>
+          <p>“His Lasagna went viral with 300 likes!”</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Food Challenges Section -->
+  <section class="food-challenges">
+    <h2>🍴 Join Our Fun Food Challenges!</h2>
+    <div class="challenge-cards">
+
+      <div class="challenge-card" data-title="Best South Indian Breakfast Challenge" data-desc="Show off your dosa, idli, or pongal skills and win hearts!">
+        <img src="south indian breakfast.jpg" alt="Challenge 1">
+        <h3>Best South Indian Breakfast Challenge</h3>
+        <button class="join-btn">Join Challenge</button>
+      </div>
+
+      <div class="challenge-card" data-title="Healthy Dessert Week" data-desc="Share your guilt-free sweets and desserts this week!">
+        <img src="healthy desert.jpg" alt="Challenge 2">
+        <h3>Healthy Dessert Week</h3>
+        <button class="join-btn">Join Challenge</button>
+      </div>
+
+      <div class="challenge-card" data-title="Street Food Diaries" data-desc="Capture your favorite local street foods and share your story.">
+        <img src="street food.jpg" alt="Challenge 3">
+        <h3>Street Food Diaries</h3>
+        <button class="join-btn">Join Challenge</button>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Upload Form Modal -->
+  <section class="upload-section" id="uploadSection">
+    <form id="postForm" class="post-form">
+      <h2>Upload Your Post</h2>
+      <input type="text" id="dishName" placeholder="Dish Name" required>
+      <textarea id="dishDesc" placeholder="Write about your dish..." required></textarea>
+      <input type="text" id="dishLocation" placeholder="Location (optional)">
+      <input type="file" id="dishImage" accept="image/*" required>
+      <button type="submit">Post</button>
+    </form>
+  </section>
+
+  <!-- Posts Display -->
+  <section class="posts-container" id="postsContainer">
+    <h2 class="section-title">Community Posts 💬</h2>
+  </section>
+
+  <!-- JS Script -->
+  <script>
+    // Open challenge page on join button click
+    const joinButtons = document.querySelectorAll('.join-btn');
+
+    joinButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const title = encodeURIComponent(btn.closest('.challenge-card').getAttribute('data-title'));
+        const desc = encodeURIComponent(btn.closest('.challenge-card').getAttribute('data-desc'));
+        window.location.href = `challenge.html?title=${title}&desc=${desc}`;
+      });
+    });
+
+    // Add Post modal logic remains the same
+    const addPostBtn = document.getElementById('addPostBtn');
+    const uploadSection = document.getElementById('uploadSection');
+
+    addPostBtn.addEventListener('click', () => {
+      uploadSection.style.display = 'flex';
+    });
+
+    uploadSection.addEventListener('click', (e) => {
+      if(e.target === uploadSection){
+        uploadSection.style.display = 'none';
+      }
+    });
+  </script>
+</body>
+</html>

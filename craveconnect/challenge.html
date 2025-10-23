@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Challenge | CraveConnect</title>
+  <link rel="stylesheet" href="post.css">
+</head>
+<body>
+
+  <!-- Navbar -->
+  <header>
+    <nav class="navbar">
+      <div class="logo">CraveConnect</div>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="recipes.html">Recipes</a></li>
+        <li><a href="post.html">Post</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="login.html">Login</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Challenge Details -->
+  <section class="challenge-page">
+    <h1 id="challengeTitle">Challenge Title</h1>
+    <p id="challengeDesc">Challenge description will appear here.</p>
+    <button id="joinChallengeBtn">Join Now</button>
+  </section>
+
+  <script>
+    // Get query parameters from URL
+    const params = new URLSearchParams(window.location.search);
+    const title = params.get('title') || "Challenge Title";
+    const desc = params.get('desc') || "Challenge description will appear here.";
+
+    document.getElementById('challengeTitle').textContent = title;
+    document.getElementById('challengeDesc').textContent = desc;
+
+    // Join button click
+    document.getElementById('joinChallengeBtn').addEventListener('click', () => {
+      alert(`You have joined "${title}"!`);
+    });
+  </script>
+
+</body>
+</html>

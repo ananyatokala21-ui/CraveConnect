@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chocolate Lava Cake | CraveConnect</title>
+  <link rel="stylesheet" href="post.css">
+  <style>
+    .recipe-banner {
+      background: url('choco lava.webp') center/cover no-repeat;
+      height: 350px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      text-shadow: 1px 1px 10px rgba(0, 0, 0, 0.7);
+    }
+
+    .recipe-content {
+      max-width: 900px;
+      margin: 50px auto;
+      background: #fff8f3;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+    }
+
+    .recipe-content h2 {
+      color: #ff7043;
+      margin-bottom: 15px;
+      text-align: center;
+    }
+
+    .ingredients, .steps {
+      margin-top: 25px;
+    }
+
+    .ingredients ul, .steps ol {
+      margin-left: 20px;
+    }
+
+    .like-section, .comment-section, .rating-section {
+      margin-top: 30px;
+      text-align: center;
+    }
+
+    .like-btn {
+      background-color: #ff7043;
+      border: none;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 10px;
+      cursor: pointer;
+      font-size: 16px;
+      transition: 0.3s;
+    }
+
+    .like-btn:hover {
+      background-color: #ff5722;
+    }
+
+    .comment-input {
+      width: 70%;
+      padding: 10px;
+      border-radius: 8px;
+      border: 1px solid #ffab91;
+      outline: none;
+    }
+
+    .comment-btn {
+      background-color: #ff7043;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 8px;
+      margin-left: 10px;
+      cursor: pointer;
+    }
+
+    .comments-list {
+      margin-top: 20px;
+      text-align: left;
+    }
+
+    .comment {
+      background: white;
+      padding: 10px;
+      border-radius: 8px;
+      margin-bottom: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+
+    .stars {
+      display: flex;
+      justify-content: center;
+      gap: 8px;
+      font-size: 24px;
+      cursor: pointer;
+    }
+
+    .stars span {
+      color: #ccc;
+      transition: color 0.3s;
+    }
+
+    .stars span.active {
+      color: gold;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <header>
+    <nav class="navbar">
+      <div class="logo">CraveConnect</div>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="recipes.html">Recipes</a></li>
+        <li><a href="post.html">Post</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="login.html">Login</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Recipe Banner -->
+  <section class="recipe-banner">
+    <h1>Chocolate Lava Cake 🍫</h1>
+    <p>Rich, gooey, and filled with molten chocolate goodness!</p>
+  </section>
+
+  <!-- Recipe Content -->
+  <section class="recipe-content">
+    <h2>Ingredients</h2>
+    <div class="ingredients">
+      <ul>
+        <li>½ cup dark chocolate</li>
+        <li>¼ cup butter</li>
+        <li>2 tablespoons sugar</li>
+        <li>1 egg</li>
+        <li>2 tablespoons flour</li>
+        <li>1 teaspoon cocoa powder</li>
+        <li>½ teaspoon vanilla essence</li>
+      </ul>
+    </div>
+
+    <h2>Steps to Make</h2>
+    <div class="steps">
+      <ol>
+        <li>Melt chocolate and butter together until smooth.</li>
+        <li>Whisk in sugar and egg until creamy.</li>
+        <li>Add flour, cocoa, and vanilla essence; mix well.</li>
+        <li>Pour the batter into greased ramekins.</li>
+        <li>Bake at 200°C for 8–10 minutes.</li>
+        <li>Serve warm — enjoy the molten center!</li>
+      </ol>
+    </div>
+
+    <!-- Like Section -->
+    <div class="like-section">
+      <button class="like-btn" id="likeBtn">❤️ Like</button>
+      <p id="likeCount">0 Likes</p>
+    </div>
+
+    <!-- Rating Section -->
+    <div class="rating-section">
+      <h3>Rate This Recipe ⭐</h3>
+      <div class="stars" id="stars">
+        <span data-value="1">★</span>
+        <span data-value="2">★</span>
+        <span data-value="3">★</span>
+        <span data-value="4">★</span>
+        <span data-value="5">★</span>
+      </div>
+      <p id="ratingMsg"></p>
+    </div>
+
+    <!-- Comment Section -->
+    <div class="comment-section">
+      <h3>Leave a Comment 💬</h3>
+      <input type="text" id="commentInput" class="comment-input" placeholder="Write something...">
+      <button class="comment-btn" id="commentBtn">Post</button>
+      <div class="comments-list" id="commentsList"></div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 CraveConnect</p>
+  </footer>
+
+  <script>
+    // Like button logic
+    const likeBtn = document.getElementById("likeBtn");
+    const likeCount = document.getElementById("likeCount");
+    let likes = 0;
+
+    likeBtn.addEventListener("click", () => {
+      likes++;
+      likeCount.textContent = likes + " Likes";
+    });
+
+    // Comment logic
+    const commentBtn = document.getElementById("commentBtn");
+    const commentInput = document.getElementById("commentInput");
+    const commentsList = document.getElementById("commentsList");
+
+    commentBtn.addEventListener("click", () => {
+      const commentText = commentInput.value.trim();
+      if (commentText !== "") {
+        const commentDiv = document.createElement("div");
+        commentDiv.classList.add("comment");
+        commentDiv.textContent = commentText;
+        commentsList.appendChild(commentDiv);
+        commentInput.value = "";
+      }
+    });
+
+    // Rating logic
+    const stars = document.querySelectorAll(".stars span");
+    const ratingMsg = document.getElementById("ratingMsg");
+
+    stars.forEach(star => {
+      star.addEventListener("click", () => {
+        const rating = star.getAttribute("data-value");
+        stars.forEach(s => s.classList.remove("active"));
+        for (let i = 0; i < rating; i++) stars[i].classList.add("active");
+        ratingMsg.textContent = "You rated this recipe " + rating + " stars!";
+      });
+    });
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Spicy Veg Dosa | CraveConnect</title>
+  <link rel="stylesheet" href="recipe.css">
+</head>
+<body>
+
+  <!-- Navbar -->
+  <header>
+    <nav class="navbar">
+      <div class="logo">CraveConnect</div>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="recipes.html">Recipes</a></li>
+        <li><a href="post.html">Post</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="login.html">Login</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Recipe Section -->
+  <section class="recipe-detail">
+    <div class="recipe-image">
+      <img src="spicy dosa.webp" alt="Spicy Veg Dosa">
+    </div>
+
+    <div class="recipe-info">
+      <h1>Spicy Veg Dosa 🌶️</h1>
+      <p class="desc">A crispy, flavorful South Indian dosa filled with a spicy vegetable masala stuffing — perfect for breakfast or dinner!</p>
+      
+      <h3>🧂 Ingredients</h3>
+      <ul>
+        <li>1 cup dosa batter</li>
+        <li>1/2 cup mixed vegetables (carrot, beans, peas)</li>
+        <li>1 onion, finely chopped</li>
+        <li>1 green chili, chopped</li>
+        <li>1 tsp red chili powder</li>
+        <li>Salt to taste</li>
+        <li>Oil or ghee for cooking</li>
+      </ul>
+
+      <h3>👩‍🍳 Instructions</h3>
+      <ol>
+        <li>Heat oil in a pan and sauté onions, chilies, and vegetables.</li>
+        <li>Add salt, chili powder, and cook until veggies are soft.</li>
+        <li>Spread dosa batter on a tawa and drizzle oil around.</li>
+        <li>Place the masala mixture in the center and fold the dosa.</li>
+        <li>Serve hot with chutney or sambar!</li>
+      </ol>
+
+      <!-- Ratings & Likes -->
+      <div class="interaction">
+        <button id="likeBtn">❤️ Like (<span id="likeCount">0</span>)</button>
+
+        <div class="rating">
+          <label>⭐ Rate this Recipe:</label>
+          <select id="ratingSelect">
+            <option value="0">Select</option>
+            <option value="1">⭐</option>
+            <option value="2">⭐⭐</option>
+            <option value="3">⭐⭐⭐</option>
+            <option value="4">⭐⭐⭐⭐</option>
+            <option value="5">⭐⭐⭐⭐⭐</option>
+          </select>
+          <p id="ratingMsg"></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Comments -->
+  <section class="comments">
+    <h2>💬 Comments & Reviews</h2>
+    <form id="commentForm">
+      <input type="text" id="commentName" placeholder="Your Name" required>
+      <textarea id="commentText" placeholder="Write your comment..." required></textarea>
+      <button type="submit">Post Comment</button>
+    </form>
+
+    <div id="commentList"></div>
+  </section>
+
+  <footer>
+    <p>© 2025 CraveConnect</p>
+  </footer>
+
+  <script src="recipe.js"></script>
+</body>
+</html>
